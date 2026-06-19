@@ -43,20 +43,6 @@ for(let i=0;i<10;i++){
         l++;
     }
 }
-
-let tabela = document.getElementById("tabuleiro");
-for(let i = 0; i < 10; i++){
-    let linha = document.createElement("tr");
-    for(let j = 0; j < 10; j++){
-
-        let celula = document.createElement("td");
-
-        celula.innerText = matriz[i][j];
-
-        linha.appendChild(celula);
-    }
-    tabela.appendChild(linha);
-}
 }
 
 
