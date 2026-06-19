@@ -3,23 +3,23 @@ let itens = [];
 // criamos um vetor vazio
 // adicionamos todos os elementos que ficarão na matriz
 for(let i=0;i<10;i++){
-    itens.push("b1");
+    itens.push("barco1");
 }
 
 for(let i=0;i<10;i++){
-    itens.push("b2");
+    itens.push("barco2");
 }
 
 for(let i=0;i<10;i++){
-    itens.push("b3");
+    itens.push("barco3");
 }
 
 for(let i=0;i<35;i++){
-    itens.push("bm");
+    itens.push("bomba");
 }
 
 for(let i=0;i<35;i++){
-    itens.push("H2O");
+    itens.push("agua");
 }
 // embaralhamento dos itens do vetor
 for(let i = itens.length - 1; i > 0; i--){
@@ -43,20 +43,23 @@ for(let i=0;i<10;i++){
         l++;
     }
 }
-
+// criação da tabela para mostrar o tabuleiro do jogo
 let tabela = document.getElementById("tabuleiro");
+tabela.innerHTML = "";
 for(let i = 0; i < 10; i++){
     let linha = document.createElement("tr");
     for(let j = 0; j < 10; j++){
 
         let celula = document.createElement("td");
 
-        celula.innerText = matriz[i][j];
+        celula.innerHTML = '<img src = "img/${matriz[i][j]}.jpeg">';
 
         linha.appendChild(celula);
     }
     tabela.appendChild(linha);
 }
+
+
 }
 
 
