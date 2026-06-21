@@ -62,11 +62,10 @@ for(let i = 0; i < 10; i++){
 
         celula.innerHTML = `<img src = "img/mar.png" width = "100" heigth = "100">`;
         let imgCorrespondente = matriz[i][j];
-         celula.addEventListener("click", function() {
+        celula.addEventListener("click", function() {
             if(jogoEncerrado){
                 return;
             }
-            celula.addEventListener("click", function() {
 
             if(jogoEncerrado){
                 return;
@@ -80,26 +79,27 @@ for(let i = 0; i < 10; i++){
 
             celula.innerHTML =`<img src="img/${imgCorrespondente}.jpeg" width="100" height="100">`;
 
-            if(conteudo === "barco1"){
+            if(imgCorrespondente === "barco1"){
                 pontos += 10;
                 barcosEncontrados++;
+                
             }
 
-            else if(conteudo === "barco2"){
+            else if(imgCorrespondente === "barco2"){
                 pontos += 20;
                 barcosEncontrados++;
             }
 
-            else if(conteudo === "barco3"){
+            else if(imgCorrespondente === "barco3"){
                 pontos += 30;
                 barcosEncontrados++;
             }
 
-            else if(conteudo === "agua"){
+            else if(imgCorrespondente === "agua"){
                 pontos += 0;
             }
 
-            else if(conteudo === "bomba"){
+            else if(imgCorrespondente === "bomba"){
                 pontos -= 10;
                 bombasEncontradas++;
                 if(bombasEncontradas>=3){
@@ -108,8 +108,16 @@ for(let i = 0; i < 10; i++){
                 }
     
             }
-});         
-         });
+            document.getElementById("pontos").innerHTML = pontos;
+            document.getElementById("barcos").innerHTML = barcosEncontrados;         
+
+            if(vidas <= 0){
+
+                jogoEncerrado = true;
+
+                alert("Game Over!");
+            }
+        });
 
         linha.appendChild(celula);
     }
