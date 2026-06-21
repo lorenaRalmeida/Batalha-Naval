@@ -1,3 +1,9 @@
+
+let pontos = 0;
+let vidas = 3;
+let barcosEncontrados = 0;
+let jogoEncerrado = false;
+
 function jogarBN(){
 let itens = [];
 // criamos um vetor vazio
