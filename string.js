@@ -2,6 +2,7 @@
 let pontos = 0;
 let vidas = 3;
 let barcosEncontrados = 0;
+let bombasEncontradas = 0;
 let jogoEncerrado = false;
 
 function jogarBN(){
@@ -20,11 +21,11 @@ for(let i=0;i<10;i++){
     itens.push("barco3");
 }
 
-for(let i=0;i<35;i++){
+for(let i=0;i<25;i++){
     itens.push("bomba");
 }
 
-for(let i=0;i<35;i++){
+for(let i=0;i<45;i++){
     itens.push("agua");
 }
 // embaralhamento dos itens do vetor
@@ -50,6 +51,7 @@ for(let i=0;i<10;i++){
     }
 }
 // criação da tabela para mostrar o tabuleiro do jogo
+// utilização de linguagem DOM
 let tabela = document.getElementById("tabuleiro");
 tabela.innerHTML = "";
 for(let i = 0; i < 10; i++){
@@ -59,12 +61,60 @@ for(let i = 0; i < 10; i++){
         let celula = document.createElement("td");
 
         celula.innerHTML = `<img src = "img/mar.png" width = "100" heigth = "100">`;
+        let imgCorrespondente = matriz[i][j];
+         celula.addEventListener("click", function() {
+            if(jogoEncerrado){
+                return;
+            }
+            celula.addEventListener("click", function() {
+
+            if(jogoEncerrado){
+                return;
+            }
+
+            if(celula.dataset.aberta === "sim"){
+                return;
+            }
+
+            celula.dataset.aberta = "sim";
+
+            celula.innerHTML =`<img src="img/${imgCorrespondente}.jpeg" width="100" height="100">`;
+
+            if(conteudo === "barco1"){
+                pontos += 10;
+                barcosEncontrados++;
+            }
+
+            else if(conteudo === "barco2"){
+                pontos += 20;
+                barcosEncontrados++;
+            }
+
+            else if(conteudo === "barco3"){
+                pontos += 30;
+                barcosEncontrados++;
+            }
+
+            else if(conteudo === "agua"){
+                pontos += 0;
+            }
+
+            else if(conteudo === "bomba"){
+                pontos -= 10;
+                bombasEncontradas++;
+                if(bombasEncontradas>=3){
+                    vidas--;
+                    bombasEncontradas=0;
+                }
+    
+            }
+});         
+         });
 
         linha.appendChild(celula);
     }
     tabela.appendChild(linha);
 }
-
 
 }
 
