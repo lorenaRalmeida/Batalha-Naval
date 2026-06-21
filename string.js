@@ -52,7 +52,7 @@ for(let i = 0; i < 10; i++){
 
         let celula = document.createElement("td");
 
-        celula.innerHTML = `<img src = "img/${matriz[i][j]}.jpeg" width = "50" heigth = "50">`;
+        celula.innerHTML = `<img src = "img/mar.png" width = "100" heigth = "100">`;
 
         linha.appendChild(celula);
     }
