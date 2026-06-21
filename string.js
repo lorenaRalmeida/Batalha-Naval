@@ -1,6 +1,6 @@
 
 let pontos = 0;
-let vidas = 3;
+let vidas = 5;
 let barcosEncontrados = 0;
 let bombasEncontradas = 0;
 let jogoEncerrado = false;
@@ -109,13 +109,15 @@ for(let i = 0; i < 10; i++){
     
             }
             document.getElementById("pontos").innerHTML = pontos;
-            document.getElementById("barcos").innerHTML = barcosEncontrados;         
+            document.getElementById("barcos").innerHTML = barcosEncontrados;
 
-            if(vidas <= 0){
+            if(barcosEncontrados === 30){
+            jogoEncerrado = true;
+            mostrarFimJogo("Você venceu!");
+            }else if(vidas <= 0){
 
                 jogoEncerrado = true;
-
-                alert("Game Over!");
+                mostrarFimJogo("Game Over!");
             }
         });
 
@@ -126,5 +128,24 @@ for(let i = 0; i < 10; i++){
 
 }
 
+function mostrarFimJogo(msg){
 
+    document.getElementById("textoFinal")
+    .innerHTML = msg;
+
+    document.getElementById("overlay")
+    .style.display = "block";
+}
+
+function novoJogo(){
+    pontos = 0;
+    vidas = 5;
+    barcosEncontrados = 0;
+    jogoEncerrado = false;
+    bombasEncontradas = 0;
+    document.getElementById("overlay").style.display = "none";
+    document.getElementById("pontos").innerHTML = 0;
+    document.getElementById("barcos").innerHTML = 0;
+    jogarBN();
+}
 
