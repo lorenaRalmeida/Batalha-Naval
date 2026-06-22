@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Peter Pan - Batalha Naval</title>
+<title>Batalha Naval</title>
 
 <style>
 *{
@@ -51,7 +51,7 @@ body{
     padding:25px;
 }
 
-.foto{
+.gif{
     width:250px;
     height:250px;
     border-radius:50%;
@@ -61,7 +61,7 @@ body{
 
 }
 
-.foto img{
+.gif img{
     width:100%;
     height:100%;
     object-fit:cover;
@@ -145,15 +145,15 @@ button:hover{
 </head>
 <body>
     <video class="fundo" autoplay muted loop>
-    <source src="fundo.mp4" type="video/mp4">
+    <source src="./vídeos/fundot.mp4" type="video/mp4">
     </video>
 
 <div class="card">
 
     <div class="lado-esquerdo">
 
-        <div class="foto">
-            <img src=peterf.gif>
+        <div class="gif">
+            <img src="./vídeos/peterf.gif">
         </div>
 
         <h2>Peter Pan</h2>
@@ -210,9 +210,6 @@ function iniciar(){
 
     escreverTexto();
 
-    setTimeout(() => {
-        falarTexto();
-    }, 500);
 }
 
 function reiniciar(){
