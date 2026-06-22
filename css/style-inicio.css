@@ -1,0 +1,77 @@
+/*tirando as margens padrões do navegador e colocando a fonte Poppins para a página inteira*/
+*{
+    margin:0;
+    padding:0;
+    /*faz o tamanho dos elementos contar borda e preenchimento*/
+    box-sizing:border-box;
+    font-family:'Poppins', sans-serif;
+}
+
+
+body{
+    height:100vh;
+    /*impede de aparecer a barra de rolagem*/
+    overflow:hidden;
+}
+
+
+/*configurando o fundo*/
+.video-fundo{
+    position:fixed;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    z-index:-1;
+}
+
+
+/*ajustando os elementos da página*/
+.elementos{
+    height:100vh;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+}
+
+
+/* ajustando o tamanho do título */
+.titulo{
+    width:1000px;
+}
+
+
+/*ajustando o espaço entre os botões*/
+.botoes{
+
+    display:flex;
+    gap:80px;
+    margin-top:30px;
+}
+
+/*arrumando o tamanho dos botões e estilizando eles*/
+button{
+
+    width:250px;
+    height:60px;
+
+    border:none;
+    border-radius:40px;
+
+    background:rgba(255,255,255,0.45);
+
+    font-family:'Poppins', sans-serif;
+    font-size:24px;
+    font-weight:700;
+
+    cursor:pointer;
+
+    transition:0.3s;
+}
+
+/*colocando um efeito quando passa o mouse*/
+button:hover{
+
+    background:rgba(255,255,255,0.75);
+    transform:scale(1.05);
+
+}
