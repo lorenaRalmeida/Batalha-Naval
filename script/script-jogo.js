@@ -73,7 +73,7 @@ for(let i = 0; i < 10; i++){
 
             celula.dataset.aberta = "sim";
 
-            celula.innerHTML =`<img src="..img/jogo/${imgCorrespondente}.png" width="50" height="50">`;
+            celula.innerHTML =`<img src="../img/jogo/${imgCorrespondente}.png" width="50" height="50">`;
 
             if(imgCorrespondente === "barco1"){
                 pontos += 10;
