@@ -7,40 +7,64 @@
  <link rel="stylesheet" href="../css/style-tutorial.css">
 </head>
 <body>
-    <video class="fundo" autoplay muted loop>
+    <!-- vídeo de fundo -->
+<video class="fundo" autoplay muted loop>
     <source src="../vídeos/vid tutorial/fundot.mp4" type="video/mp4">
-    </video>
+</video>
 
+<!-- card principal -->
 <div class="card">
 
+    <!-- lado esquerdo -->
     <div class="lado-esquerdo">
 
-        <div class="gif">
+        <!-- foto -->
+        <div class="foto">
             <img src="../vídeos/vid tutorial/peterf.gif">
         </div>
 
+        <!-- nome -->
         <h2>Peter Pan</h2>
+
+        <!-- subtítulo -->
         <p class="subtitulo">Seu guia da Terra do Nunca</p>
 
     </div>
 
+    <!-- lado direito -->
     <div class="lado-direito">
 
+        <!-- título -->
         <h1 class="titulo">Como Jogar Batalha Naval</h1>
 
+        <!-- caixa do texto -->
         <div class="balao">
             <span id="fala"></span>
         </div>
 
+        <!-- botões -->
         <div class="controles">
+
+            <!-- botão para ler novamente -->
             <button onclick="reiniciar()">
                 Ler Novamente
             </button>
+
+            <!-- botão voltar -->
+            <button onclick="voltarPagina()">
+                Voltar
+            </button>
+
         </div>
 
     </div>
 
 </div>
+
+<!-- Áudio -->
+<audio id="audio" loop>
+    <source src="audio1.mp3" type="audio/mpeg">
+</audio>
  <script src="../script/script-tutorial.js"></script> 
 
 </body>
