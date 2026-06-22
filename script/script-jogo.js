@@ -73,7 +73,7 @@ for(let i = 0; i < 10; i++){
 
             celula.dataset.aberta = "sim";
 
-            celula.innerHTML =`<img src="../img/jogo/${imgCorrespondente}.png" width="50" height="50">`;
+            celula.innerHTML =`<img src="../img/jogo/${imgCorrespondente}.jpeg" width="50" height="50">`;
 
             if(imgCorrespondente === "barco1"){
                 pontos += 10;
@@ -139,7 +139,7 @@ function revelarTabuleiro(){
         for(let j=0;j<10;j++){
             let celulaF = document.createElement("td");
             let imgCorrespondente = matriz[i][j];
-            celula.innerHTML =`<img src="../img/jogo/${imgCorrespondente}.png" width="50" height="50">`;
+            celula.innerHTML =`<img src="../img/jogo/${imgCorrespondente}.jpeg" width="50" height="50">`;
         }
     }
 }
