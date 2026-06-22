@@ -4,7 +4,7 @@ let vidas = 5;
 let barcosEncontrados = 0;
 let bombasEncontradas = 0;
 let jogoEncerrado = false;
-
+let matriz = [];
 function jogarBN(){
 let itens = [];
 // criamos um vetor vazio
@@ -41,7 +41,6 @@ for(let i = itens.length - 1; i > 0; i--){
 }
 
 // Transformação do vetor na matriz do tabuleiro
-let matriz = [];
 let l = 0;
 for(let i=0;i<10;i++){
     matriz[i] = [];
@@ -107,7 +106,8 @@ for(let i = 0; i < 10; i++){
             document.getElementById("pontos").innerHTML = pontos;
             document.getElementById("barcos").innerHTML = barcosEncontrados;
 
-            if(barcosEncontrados === 30){
+            if(barcosEncontrados >= 30){
+                revelarTabuleiro();
             jogoEncerrado = true;
             mostrarFimJogo("Você venceu!");
             }else if(vidas <= 0){
@@ -121,9 +121,52 @@ for(let i = 0; i < 10; i++){
     }
     tabela.appendChild(linha);
 }
+ let area = document.getElementById("areaVidas");
 
+    let tabela = document.createElement("table");
+    tabela.id = "vidasTabela";
+
+    let linha = document.createElement("tr");
+
+    for(let i = 1; i <= 5; i++){
+
+        let celula = document.createElement("td");
+
+        let img = document.createElement("img");
+
+        img.id = "vida" + i;
+        img.src = "img/estrelaCheia.png";
+        img.width = 40;
+        img.height = 40;
+
+        celula.appendChild(img);
+        linha.appendChild(celula);
+    }
+
+    tabela.appendChild(linha);
+    area.appendChild(tabela);
 }
 
+function atualizarVidas(){
+    for(let i = 1; i <= 5; i++){
+
+        let img = document.getElementById("vida" + i);
+
+        if(i <= vidas){
+            img.src = "img/estrelaCheia.png";
+        }
+        else{
+            img.src = "img/estrelaVazia.png";
+        }
+    }
+}
+window.onload = function(){
+
+    atualizarVidas();
+
+    jogarBN();
+
+}
 function mostrarFimJogo(msg){
 
     document.getElementById("textoFinal")
@@ -150,6 +193,7 @@ function novoJogo(){
     barcosEncontrados = 0;
     jogoEncerrado = false;
     bombasEncontradas = 0;
+    atualizarVidas();
     document.getElementById("overlay").style.display = "none";
     document.getElementById("pontos").innerHTML = 0;
     document.getElementById("barcos").innerHTML = 0;
