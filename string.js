@@ -100,6 +100,7 @@ for(let i = 0; i < 10; i++){
                 if(bombasEncontradas>=3){
                     vidas--;
                     bombasEncontradas=0;
+                    atualizarVidas();
                 }
     
             }
@@ -121,16 +122,18 @@ for(let i = 0; i < 10; i++){
     }
     tabela.appendChild(linha);
 }
- let area = document.getElementById("areaVidas");
+}
+function criarTabelaVidas(){
+    let areaV = document.getElementById("areaVidas");
 
-    let tabela = document.createElement("table");
-    tabela.id = "vidasTabela";
+    let tabelaV = document.createElement("table");
+    tabelaV.id = "vidasTabela";
 
-    let linha = document.createElement("tr");
+    let linhaV = document.createElement("tr");
 
     for(let i = 1; i <= 5; i++){
 
-        let celula = document.createElement("td");
+        let celulaV = document.createElement("td");
 
         let img = document.createElement("img");
 
@@ -139,12 +142,12 @@ for(let i = 0; i < 10; i++){
         img.width = 40;
         img.height = 40;
 
-        celula.appendChild(img);
-        linha.appendChild(celula);
+        celulaV.appendChild(img);
+        linhaV.appendChild(celulaV);
     }
 
-    tabela.appendChild(linha);
-    area.appendChild(tabela);
+    tabelaV.appendChild(linhaV);
+    areaV.appendChild(tabelaV);
 }
 
 function atualizarVidas(){
@@ -160,13 +163,7 @@ function atualizarVidas(){
         }
     }
 }
-window.onload = function(){
 
-    atualizarVidas();
-
-    jogarBN();
-
-}
 function mostrarFimJogo(msg){
 
     document.getElementById("textoFinal")
@@ -181,8 +178,8 @@ function revelarTabuleiro(){
         let linhaF = document.createElement("tr");
         for(let j=0;j<10;j++){
             let celulaF = document.createElement("td");
-            let imgCorrespondente = matriz[i][j];
-            celula.innerHTML =`<img src="img/${imgCorrespondente}.jpeg" width="50" height="50">`;
+            let imgCorrespondenteF = matriz[i][j];
+            celulaF.innerHTML =`<img src="img/${imgCorrespondenteF}.jpeg" width="50" height="50">`;
         }
     }
 }
@@ -195,8 +192,15 @@ function novoJogo(){
     bombasEncontradas = 0;
     atualizarVidas();
     document.getElementById("overlay").style.display = "none";
+
     document.getElementById("pontos").innerHTML = 0;
     document.getElementById("barcos").innerHTML = 0;
     jogarBN();
+}
+window.onload = function(){
+    criarTabelaVidas();
+    atualizarVidas();
+    jogarBN();
+
 }
 
