@@ -111,7 +111,7 @@ for(let i = 0; i < 10; i++){
             jogoEncerrado = true;
             mostrarFimJogo("Você venceu!");
             }else if(vidas <= 0){
-
+                revelarTabuleiro();
                 jogoEncerrado = true;
                 mostrarFimJogo("Game Over!");
             }
@@ -131,6 +131,17 @@ function mostrarFimJogo(msg){
 
     document.getElementById("overlay")
     .style.display = "block";
+}
+
+function revelarTabuleiro(){
+    for(let i=0;i<10;i++){
+        let linhaF = document.createElement("tr");
+        for(let j=0;j<10;j++){
+            let celulaF = document.createElement("td");
+            let imgCorrespondente = matriz[i][j];
+            celula.innerHTML =`<img src="img/${imgCorrespondente}.jpeg" width="50" height="50">`;
+        }
+    }
 }
 
 function novoJogo(){
