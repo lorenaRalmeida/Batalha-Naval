@@ -60,7 +60,7 @@ for(let i = 0; i < 10; i++){
 
         let celula = document.createElement("td");
 
-        celula.innerHTML = `<img src = "img/mar.png" width = "50" height = "50">`;
+        celula.innerHTML = `<img src = "../img/jogo/mar.png" width = "50" height = "50">`;
         let imgCorrespondente = matriz[i][j];
         celula.addEventListener("click", function() {
             if(jogoEncerrado){
@@ -73,7 +73,7 @@ for(let i = 0; i < 10; i++){
 
             celula.dataset.aberta = "sim";
 
-            celula.innerHTML =`<img src="img/${imgCorrespondente}.jpeg" width="50" height="50">`;
+            celula.innerHTML =`<img src="..img/jogo/${imgCorrespondente}.jpeg" width="50" height="50">`;
 
             if(imgCorrespondente === "barco1"){
                 pontos += 10;
