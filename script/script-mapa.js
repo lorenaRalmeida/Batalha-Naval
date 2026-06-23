@@ -8,22 +8,6 @@
             botao1.style.backgroundColor = "#D69F3F";   // A função usada é genérica, podendo ser usada mais de uma vez
         })
 
-        const botao2 = document.querySelector(".nivel2");
-
-        botao2.addEventListener("mouseover", function(){
-            botao2.style.backgroundColor = "#FBEBDC";
-        })
-
-        botao2.addEventListener("mouseout", function(){
-            botao2.style.backgroundColor = "#D69F3F";
-        })
-
-        const botao3 = document.querySelector(".nivel3");
-
-        botao3.addEventListener("mouseover", function(){
-            botao3.style.backgroundColor = "#FBEBDC";
-        })
-
-        botao3.addEventListener("mouseout", function(){
-            botao3.style.backgroundColor = "#D69F3F";
-        })
+        botao1.addEventListener("click", function(){ // Adiciona um evento de click no botão
+            window.location.href = "../html/index.html"; // Quando o botão for clicado, ele vai redirecionar para a página do jogo
+        });
