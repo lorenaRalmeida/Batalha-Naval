@@ -5,6 +5,8 @@ let barcosEncontrados = 0;
 let bombasEncontradas = 0;
 let jogoEncerrado = false;
 let matriz = [];
+let jogadas = 0;
+
 function jogarBN(){
 let itens = [];
 // criamos um vetor vazio
@@ -61,6 +63,7 @@ for(let i = 0; i < 10; i++){
 
         celula.innerHTML = `<img src = "../img/jogo/mar.png" width = "50" height = "50">`;
         let imgCorrespondente = matriz[i][j];
+        celula.id = "c" + i + "_" + j;
         celula.addEventListener("click", function() {
             if(jogoEncerrado){
                 return;
@@ -71,7 +74,8 @@ for(let i = 0; i < 10; i++){
             }
 
             celula.dataset.aberta = "sim";
-
+            jogadas++;
+            document.getElementById("jogadas").innerHTML = jogadas;
             celula.innerHTML =`<img src="../img/jogo/${imgCorrespondente}.jpeg" width="50" height="50">`;
 
             if(imgCorrespondente === "barco1"){
@@ -95,18 +99,17 @@ for(let i = 0; i < 10; i++){
             }
 
             else if(imgCorrespondente === "bomba"){
-                pontos -= 10;
+                pontos = Math.max(0, pontos - 10);
                 bombasEncontradas++;
-                if(bombasEncontradas>=3){
+                if(bombasEncontradas >= 3){
                     vidas--;
-                    bombasEncontradas=0;
+                    bombasEncontradas = 0;
                     atualizarVidas();
                 }
-    
             }
             document.getElementById("pontos").innerHTML = pontos;
             document.getElementById("barcos").innerHTML = barcosEncontrados;
-
+            document.getElementById("restantes");
             if(barcosEncontrados >= 30){
                 revelarTabuleiro();
             jogoEncerrado = true;
@@ -125,7 +128,7 @@ for(let i = 0; i < 10; i++){
 }
 function criarTabelaVidas(){
     let areaV = document.getElementById("areaVidas");
-
+    areaV.innerHTML = "";
     let tabelaV = document.createElement("table");
     tabelaV.id = "vidasTabela";
 
@@ -138,7 +141,7 @@ function criarTabelaVidas(){
         let img = document.createElement("img");
 
         img.id = "vida" + i;
-        img.src = "img/estrelaCheia.png";
+        img.src = "../img/jogo/vida.png";
         img.width = 40;
         img.height = 40;
 
@@ -151,15 +154,21 @@ function criarTabelaVidas(){
 }
 
 function atualizarVidas(){
-    for(let i = 1; i <= 5; i++){
+
+    for(let i = 1; i <= 7; i++){
 
         let img = document.getElementById("vida" + i);
 
-        if(i <= vidas){
-            img.src = "img/estrelaCheia.png";
+        if(!img){
+            continue;
         }
+
+        if(i <= vidas){
+            img.src = "../img/jogo/vida.png";
+        }
+
         else{
-            img.src = "img/estrelaVazia.png";
+            img.src = "../img/jogo/morte.png";
         }
     }
 }
@@ -174,12 +183,10 @@ function mostrarFimJogo(msg){
 }
 
 function revelarTabuleiro(){
-    for(let i=0;i<10;i++){
-        let linhaF = document.createElement("tr");
-        for(let j=0;j<10;j++){
-            let celulaF = document.createElement("td");
-            let imgCorrespondente = matriz[i][j];
-            celula.innerHTML =`<img src="img/${imgCorrespondente}.jpeg" width="50" height="50">`;
+    for(let i = 0; i < 10; i++){
+        for(let j = 0; j < 10; j++){
+            let celula = document.getElementById("c" + i + "_" + j);
+            celula.innerHTML =`<img src="../img/jogo/${matriz[i][j]}.jpeg" width="50" height="50">`;
         }
     }
 }
@@ -190,9 +197,11 @@ function novoJogo(){
     barcosEncontrados = 0;
     jogoEncerrado = false;
     bombasEncontradas = 0;
+    jogadas = 0;
+    matriz = [];
+    criarTabelaVidas();
     atualizarVidas();
     document.getElementById("overlay").style.display = "none";
-
     document.getElementById("pontos").innerHTML = 0;
     document.getElementById("barcos").innerHTML = 0;
     jogarBN();
