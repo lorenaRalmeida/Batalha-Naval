@@ -109,7 +109,7 @@ for(let i = 0; i < 10; i++){
             }
             document.getElementById("pontos").innerHTML = pontos;
             document.getElementById("barcos").innerHTML = barcosEncontrados;
-            document.getElementById("restantes");
+            document.getElementById("restantes").innerHTML = 30 - barcosEncontrados;
             if(barcosEncontrados >= 30){
                 revelarTabuleiro();
             jogoEncerrado = true;
@@ -188,7 +188,7 @@ function revelarTabuleiro(){
         for(let j=0;j<10;j++){
             let celulaF = document.createElement("td");
             let imgCorrespondente = matriz[i][j];
-            celula.innerHTML =`<img src="img/${imgCorrespondente}.jpeg" width="50" height="50">`;
+            celulaF.innerHTML =`<img src="img/${imgCorrespondente}.jpeg" width="50" height="50">`;
         }
     }
 }
