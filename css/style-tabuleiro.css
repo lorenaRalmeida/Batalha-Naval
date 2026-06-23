@@ -1,313 +1,404 @@
-/* =========================
-   CONFIGURAÇÕES GERAIS
-========================= */
-
 *{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
 body{
 
-    background-image:
+    min-height:100vh;
+
+    font-family:'Poppins',sans-serif;
+
+    background:
     linear-gradient(
-        rgba(0,0,40,0.45),
-        rgba(0,0,40,0.45)
+        rgba(0,10,30,0.75),
+        rgba(0,20,40,0.75)
     ),
-    url("../img/img_fundo.jpeg");
+    url("../img/jogo/img_fundo.jpeg");
 
-    background-size: cover;
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+    background-attachment:fixed;
+
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+
+    color:white;
+
+    padding:30px;
 }
-
-/* =========================
-   TÍTULO
-========================= */
 
 h1{
 
-    margin-top: 15px;
-    margin-bottom: 25px;
+    font-size:4rem;
 
-    font-size: 3rem;
-    font-weight: 800;
+    margin-bottom:25px;
 
-    color: #ffe066;
+    color:#ffe066;
 
-    letter-spacing: 2px;
+    text-transform:uppercase;
+
+    letter-spacing:4px;
 
     text-shadow:
-    0 0 8px #ffe066,
+    0 0 10px #ffe066,
     0 0 20px #ffe066,
-    0 0 35px #ffd43b;
+    0 0 40px #ffd43b,
+    0 0 60px #ffd43b;
 }
 
-/* =========================
-   PAINEL DE INFORMAÇÕES
-========================= */
+.info-container{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    justify-content:center;
+
+    gap:15px;
+
+    margin-bottom:25px;
+}
 
 h2{
 
-    width: 320px;
+    min-width:250px;
 
-    background: rgba(0,0,0,0.45);
+    padding:12px 18px;
 
-    backdrop-filter: blur(6px);
+    border-radius:15px;
 
-    border: 2px solid rgba(255,255,255,0.15);
+    background:rgba(255,255,255,0.08);
 
-    border-radius: 12px;
+    backdrop-filter:blur(12px);
 
-    padding: 10px 15px;
-
-    margin: 5px;
-
-    text-align: left;
-
-    font-size: 1rem;
+    border:1px solid rgba(255,255,255,0.15);
 
     box-shadow:
-    0 0 10px rgba(255,255,255,0.1);
+    0 0 15px rgba(255,255,255,0.08);
+
+    font-size:1rem;
 }
 
 span{
 
-    color: #ffe066;
+    color:#ffe066;
 
-    font-weight: bold;
+    font-weight:700;
 }
-
-/* =========================
-   VIDAS
-========================= */
 
 #areaVidas{
 
-    margin-bottom: 20px;
+    margin-bottom:25px;
 
-    background: rgba(0,0,0,0.4);
+    padding:15px 25px;
 
-    padding: 15px;
+    border-radius:20px;
 
-    border-radius: 15px;
+    background:rgba(255,255,255,0.08);
 
-    border: 2px solid rgba(255,224,102,0.4);
+    backdrop-filter:blur(10px);
 
     box-shadow:
-    0 0 15px rgba(255,224,102,0.3);
+    0 0 25px rgba(255,224,102,0.25);
 }
 
 #vidasTabela img{
 
-    transition: 0.3s;
+    transition:.3s;
 }
 
 #vidasTabela img:hover{
 
-    transform: scale(1.15);
-}
+    transform:scale(1.25);
 
-/* =========================
-   TABULEIRO
-========================= */
+    filter:
+    drop-shadow(0 0 10px gold);
+}
 
 #tabuleiro{
 
-    margin-top: 20px;
+    border-collapse:collapse;
 
-    border-collapse: collapse;
+    border:6px solid #8b5e34;
 
-    border: 5px solid #6b4226;
+    border-radius:20px;
 
-    background: rgba(0,0,0,0.4);
+    overflow:hidden;
 
     box-shadow:
-    0 0 20px rgba(255,255,255,0.2),
-    0 0 35px rgba(255,224,102,0.3);
+    0 0 30px rgba(255,224,102,0.25),
+    0 15px 40px rgba(0,0,0,0.5);
+
+    background:
+    rgba(255,255,255,0.05);
 }
 
 #tabuleiro td{
 
-    width: 50px;
-    height: 50px;
+    width:55px;
+    height:55px;
 
-    border: 1px solid rgba(255,255,255,0.15);
+    border:1px solid rgba(255,255,255,0.12);
 
-    transition: 0.25s;
+    transition:.25s;
 }
 
 #tabuleiro td:hover{
 
-    transform: scale(1.08);
+    cursor:pointer;
 
-    cursor: pointer;
+    transform:scale(1.08);
+
+    z-index:10;
 
     box-shadow:
-    inset 0 0 15px rgba(255,224,102,0.6);
+    inset 0 0 20px rgba(255,224,102,0.8),
+    0 0 10px rgba(255,224,102,0.5);
 }
 
 #tabuleiro img{
 
-    display: block;
+    width:55px;
+    height:55px;
 
-    width: 50px;
-    height: 50px;
+    display:block;
 }
-
-/* =========================
-   BOTÕES
-========================= */
 
 button{
 
-    margin-top: 15px;
+    margin-top:20px;
 
-    padding: 12px 25px;
+    padding:14px 35px;
 
-    border: none;
+    border:none;
 
-    border-radius: 12px;
+    border-radius:30px;
+
+    font-size:1rem;
+
+    font-weight:700;
+
+    color:#002b36;
 
     background:
     linear-gradient(
         135deg,
-        #ffe066,
-        #fab005
+        #fff3bf,
+        #ffd43b
     );
 
-    color: #1b4332;
+    cursor:pointer;
 
-    font-size: 1rem;
-
-    font-weight: 700;
-
-    cursor: pointer;
-
-    transition: 0.3s;
+    transition:.3s;
 
     box-shadow:
-    0 0 15px rgba(255,224,102,0.4);
+    0 0 20px rgba(255,224,102,0.5);
 }
 
 button:hover{
 
-    transform: translateY(-3px);
+    transform:translateY(-4px);
 
     box-shadow:
-    0 0 25px rgba(255,224,102,0.8);
+    0 0 30px rgba(255,224,102,0.9);
 }
 
 button:active{
 
-    transform: scale(0.97);
+    transform:scale(.95);
 }
-
-/* =========================
-   OVERLAY
-========================= */
 
 #overlay{
 
-    position: fixed;
+    position:fixed;
 
-    top: 0;
-    left: 0;
+    inset:0;
 
-    width: 100%;
-    height: 100%;
+    background:
+    rgba(0,0,0,.85);
 
-    background: rgba(0,0,0,0.75);
+    display:none;
 
-    display: none;
+    justify-content:center;
+    align-items:center;
 
-    justify-content: center;
-    align-items: center;
-
-    z-index: 999;
+    z-index:999;
 }
 
 #janelaFinal{
 
+    width:450px;
+
+    padding:40px;
+
+    border-radius:25px;
+
     background:
     linear-gradient(
         180deg,
-        #fff3bf,
+        #fff8d6,
         #ffe066
     );
 
-    color: #3e2723;
+    color:#3d2b1f;
 
-    padding: 40px;
+    text-align:center;
 
-    border-radius: 20px;
-
-    min-width: 350px;
-
-    text-align: center;
+    border:5px solid #8b5e34;
 
     box-shadow:
-    0 0 30px rgba(255,224,102,0.8);
-
-    border: 5px solid #6b4226;
+    0 0 50px rgba(255,224,102,0.9);
 }
 
 #textoFinal{
 
-    color: #3e2723;
+    font-size:2.5rem;
 
-    text-shadow: none;
+    margin-bottom:25px;
 
-    margin-bottom: 20px;
+    color:#3d2b1f;
+
+    text-shadow:none;
 }
 
-/* =========================
-   RESPONSIVIDADE
-========================= */
+body::before{
 
-@media(max-width: 900px){
+    content:"";
 
-    #tabuleiro td{
+    position:fixed;
 
-        width: 40px;
-        height: 40px;
+    inset:0;
+
+    pointer-events:none;
+
+    background:
+    radial-gradient(
+        circle at 20% 20%,
+        rgba(255,255,255,0.15),
+        transparent 2%
+    ),
+    radial-gradient(
+        circle at 70% 30%,
+        rgba(255,224,102,0.2),
+        transparent 2%
+    ),
+    radial-gradient(
+        circle at 40% 80%,
+        rgba(255,255,255,0.12),
+        transparent 2%
+    );
+
+    animation: brilho 8s infinite linear;
+}
+
+@keyframes brilho{
+
+    from{
+        transform:translateY(0);
     }
 
-    #tabuleiro img{
-
-        width: 40px;
-        height: 40px;
+    to{
+        transform:translateY(-40px);
     }
+}
+
+@media(max-width:900px){
 
     h1{
+        font-size:2.8rem;
+    }
 
-        font-size: 2.2rem;
+    #tabuleiro td,
+    #tabuleiro img{
+
+        width:42px;
+        height:42px;
     }
 
     h2{
-
-        width: 280px;
+        min-width:200px;
     }
 }
 
-@media(max-width: 600px){
-
-    #tabuleiro td{
-
-        width: 32px;
-        height: 32px;
-    }
-
-    #tabuleiro img{
-
-        width: 32px;
-        height: 32px;
-    }
+@media(max-width:600px){
 
     h1{
-
-        font-size: 1.8rem;
+        font-size:2rem;
     }
+
+    #tabuleiro td,
+    #tabuleiro img{
+
+        width:32px;
+        height:32px;
+    }
+
+    #janelaFinal{
+        width:90%;
+    }
+}
+
+.painel{
+
+    position: fixed;
+
+    left: 30px;
+    top: 160px;
+
+    width: 280px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+
+    z-index: 10;
+}
+
+h2{
+
+    width: 100%;
+
+    padding: 14px;
+
+    border-radius: 15px;
+
+    background: rgba(255,255,255,0.08);
+
+    backdrop-filter: blur(10px);
+
+    border: 1px solid rgba(255,255,255,0.15);
+
+    box-shadow:
+    0 0 15px rgba(255,255,255,0.08);
+
+    font-size: 1rem;
+
+    text-align: left;
+}
+
+h1{
+
+    font-size: 3rem;
+
+    margin-bottom: 30px;
+
+    color: #ffe066;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+
+    text-transform: uppercase;
+
+    text-shadow:
+    0 0 5px rgba(255,224,102,0.5),
+    0 0 10px rgba(255,224,102,0.4);
+
+    border-bottom: 2px solid rgba(255,224,102,0.4);
+
+    padding-bottom: 10px;
 }
