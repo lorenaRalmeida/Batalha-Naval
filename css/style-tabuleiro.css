@@ -266,3 +266,6 @@ button:hover{
         font-size: 2rem;
     }
 }
+body {
+    background-image: url("../img/personagens/fundo_ceu.png");
+}
