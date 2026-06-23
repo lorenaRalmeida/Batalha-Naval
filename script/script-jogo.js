@@ -183,10 +183,12 @@ function mostrarFimJogo(msg){
 }
 
 function revelarTabuleiro(){
-    for(let i = 0; i < 10; i++){
-        for(let j = 0; j < 10; j++){
-            let celula = document.getElementById("c" + i + "_" + j);
-            celula.innerHTML =`<img src="../img/jogo/${matriz[i][j]}.jpeg" width="50" height="50">`;
+    for(let i=0;i<10;i++){
+        let linhaF = document.createElement("tr");
+        for(let j=0;j<10;j++){
+            let celulaF = document.createElement("td");
+            let imgCorrespondente = matriz[i][j];
+            celula.innerHTML =`<img src="img/${imgCorrespondente}.jpeg" width="50" height="50">`;
         }
     }
 }

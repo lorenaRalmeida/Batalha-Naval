@@ -1,6 +1,17 @@
 /* Colocando a div com position: relative para os botões ficarem posicionados de aconde com a div como
         referência */
 
+        *{
+            margin:0;
+            padding:0;
+            
+        }
+
+        body
+        {
+            overflow:hidden;
+        }
+
         .mapa
         {
             position: relative;
@@ -15,6 +26,7 @@
             position: absolute;
             top: 20%;
             left: 20%;
+            padding:5px;
         }
 
         .nivel2
@@ -22,6 +34,8 @@
             position: absolute;
             top: 60%;
             left: 18%;
+            padding:5px;
+
         }
 
         .nivel1
@@ -29,6 +43,8 @@
             position: absolute;
             top: 60%;
             left: 75%;
+            padding:5px;
+
         }
 
         /* Estilização geral dos botões */
