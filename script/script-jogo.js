@@ -28,7 +28,7 @@ for(let i=0;i<25;i++){
 }
 
 for(let i=0;i<45;i++){
-    itens.push("agua");
+    itens.push("onda");
 }
 // embaralhamento dos itens do vetor
 for(let i = itens.length - 1; i > 0; i--){
@@ -61,7 +61,7 @@ for(let i = 0; i < 10; i++){
 
         let celula = document.createElement("td");
 
-        celula.innerHTML = `<img src = "../img/jogo/mar.png" width = "50" height = "50">`;
+        celula.innerHTML = `<img src = "../img/jogo/mar.png">`;
         let imgCorrespondente = matriz[i][j];
         celula.id = "c" + i + "_" + j;
         celula.addEventListener("click", function() {
@@ -76,7 +76,7 @@ for(let i = 0; i < 10; i++){
             celula.dataset.aberta = "sim";
             jogadas++;
             document.getElementById("jogadas").innerHTML = jogadas;
-            celula.innerHTML =`<img src="../img/jogo/${imgCorrespondente}.jpeg" width="50" height="50">`;
+            celula.innerHTML =`<img src="../img/jogo/${imgCorrespondente}.png">`;
 
             if(imgCorrespondente === "barco1"){
                 pontos += 10;
@@ -94,7 +94,7 @@ for(let i = 0; i < 10; i++){
                 barcosEncontrados++;
             }
 
-            else if(imgCorrespondente === "agua"){
+            else if(imgCorrespondente === "onda"){
                 pontos += 0;
             }
 
@@ -155,7 +155,7 @@ function criarTabelaVidas(){
 
 function atualizarVidas(){
 
-    for(let i = 1; i <= 7; i++){
+    for(let i = 1; i <= 5; i++){
 
         let img = document.getElementById("vida" + i);
 
@@ -183,12 +183,16 @@ function mostrarFimJogo(msg){
 }
 
 function revelarTabuleiro(){
-    for(let i=0;i<10;i++){
-        let linhaF = document.createElement("tr");
-        for(let j=0;j<10;j++){
-            let celulaF = document.createElement("td");
-            let imgCorrespondente = matriz[i][j];
-            celulaF.innerHTML =`<img src="img/${imgCorrespondente}.jpeg" width="50" height="50">`;
+
+    for(let i = 0; i < 10; i++){
+
+        for(let j = 0; j < 10; j++){
+
+            let celula =
+            document.getElementById("c" + i + "_" + j);
+
+            celula.innerHTML =
+            `<img src="../img/jogo/${matriz[i][j]}.png">`;
         }
     }
 }
@@ -206,6 +210,8 @@ function novoJogo(){
     document.getElementById("overlay").style.display = "none";
     document.getElementById("pontos").innerHTML = 0;
     document.getElementById("barcos").innerHTML = 0;
+    document.getElementById("jogadas").innerHTML = 0;
+    document.getElementById("restantes").innerHTML = 30;
     jogarBN();
 }
 window.onload = function(){
