@@ -12,7 +12,7 @@ body{
 
     background:
     linear-gradient(
-        rgba(0,10,30,0.75),
+        rgba(2, 10, 25, 0.358),
         rgba(0,20,40,0.75)
     ),
     url("../img/jogo/img_fundo.jpeg");
@@ -29,6 +29,8 @@ body{
     color:rgb(255, 255, 255);
 
     padding:30px;
+
+    overflow:hidden;
 }
 
 h1{
@@ -92,31 +94,43 @@ span{
 
 #areaVidas{
 
-    margin-bottom:25px;
+    display:flex;
 
-    padding:15px 25px;
+    justify-content:center;
 
-    border-radius:20px;
+    align-items:center;
 
-    background:rgba(255,255,255,0.08);
+    padding:12px;
 
-    backdrop-filter:blur(10px);
+    border-radius:15px;
 
-    box-shadow:
-    0 0 25px rgba(255,224,102,0.25);
+    background:rgba(255,224,102,0.08);
+
+    border:1px solid rgba(255,224,102,0.3);
+}
+
+#vidasTabela{
+
+    border-collapse: separate;
+
+    border-spacing: 8px;
 }
 
 #vidasTabela img{
 
-    transition:.3s;
+    width:40px;
+
+    height:40px;
+
+    transition:0.3s;
+
+    filter:
+    drop-shadow(0 0 8px gold);
 }
 
 #vidasTabela img:hover{
 
-    transform:scale(1.25);
-
-    filter:
-    drop-shadow(0 0 10px gold);
+    transform:scale(1.2);
 }
 
 #tabuleiro{
@@ -161,9 +175,11 @@ span{
 }
 
 #tabuleiro img{
+    width:100%;
 
-    width:55px;
-    height:55px;
+    height:100%;
+
+    object-fit:contain;
 
     display:block;
 }
@@ -214,55 +230,129 @@ button:active{
 
 #overlay{
 
-    position:fixed;
+    position: fixed;
 
-    inset:0;
+    top: 0;
+    left: 0;
 
-    background:
-    rgba(0,0,0,.85);
+    width: 100%;
+    height: 100%;
 
-    display:none;
+    background: rgba(0,0,0,0.85);
 
-    justify-content:center;
-    align-items:center;
+    display: none;
 
-    z-index:999;
+    justify-content: center;
+    align-items: center;
+
+    z-index: 9999;
+
+    backdrop-filter: blur(6px);
 }
 
 #janelaFinal{
 
-    width:450px;
+    width: 500px;
 
-    padding:40px;
+    padding: 40px;
 
-    border-radius:25px;
+    border-radius: 25px;
+
+    text-align: center;
 
     background:
     linear-gradient(
         180deg,
-        #fff8d6,
-        #ffe066
+        rgba(20,40,80,0.98),
+        rgba(10,20,40,0.98)
     );
 
-    color:#3d2b1f;
-
-    text-align:center;
-
-    border:5px solid #8b5e34;
+    border: 4px solid #ffe066;
 
     box-shadow:
-    0 0 50px rgba(255,224,102,0.9);
+    0 0 25px rgba(255,224,102,0.5),
+    0 0 50px rgba(255,224,102,0.3);
+
+    animation: aparecer 0.5s ease;
 }
 
 #textoFinal{
 
-    font-size:2.5rem;
+    font-size: 3rem;
 
-    margin-bottom:25px;
+    font-weight: bold;
 
-    color:#3d2b1f;
+    color: #ffe066;
 
-    text-shadow:none;
+    margin-bottom: 25px;
+
+    text-shadow:
+    0 0 10px rgba(255,224,102,0.8),
+    0 0 20px rgba(255,224,102,0.6);
+}
+
+#janelaFinal p{
+
+    color: white;
+
+    font-size: 1.1rem;
+
+    margin-bottom: 25px;
+}
+
+#janelaFinal button{
+
+    padding: 14px 35px;
+
+    border: none;
+
+    border-radius: 30px;
+
+    font-size: 1rem;
+
+    font-weight: bold;
+
+    background:
+    linear-gradient(
+        135deg,
+        #ffe066,
+        #ffca3a
+    );
+
+    color: #0d1b2a;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+#janelaFinal button:hover{
+
+    transform: scale(1.08);
+
+    box-shadow:
+    0 0 20px rgba(255,224,102,0.8);
+}
+
+@keyframes aparecer{
+
+    from{
+
+        opacity: 0;
+
+        transform:
+        scale(0.7)
+        translateY(-30px);
+    }
+
+    to{
+
+        opacity: 1;
+
+        transform:
+        scale(1)
+        translateY(0);
+    }
 }
 
 body::before{
@@ -346,16 +436,28 @@ body::before{
 
     position: fixed;
 
-    left: 30px;
-    top: 160px;
+    left: 25px;
+    top: 140px;
 
-    width: 280px;
+    width: 300px;
 
     display: flex;
     flex-direction: column;
+
     gap: 12px;
 
-    z-index: 10;
+    padding: 20px;
+
+    border-radius: 20px;
+
+    background: rgba(0,0,0,0.45);
+
+    backdrop-filter: blur(12px);
+
+    border: 1px solid rgba(255,255,255,0.15);
+
+    box-shadow:
+    0 0 25px rgba(0,0,0,0.4);
 }
 
 h2{
@@ -401,4 +503,11 @@ h1{
     border-bottom: 2px solid rgba(255,224,102,0.4);
 
     padding-bottom: 10px;
+}
+
+#btnNovoJogo{
+
+    width:100%;
+
+    margin-top:10px;
 }
