@@ -138,7 +138,7 @@ function criarTabelaVidas(){
         let img = document.createElement("img");
 
         img.id = "vida" + i;
-        img.src = "img/estrelaCheia.png";
+        img.src = "../img/jogo/vida.png";
         img.width = 40;
         img.height = 40;
 
@@ -156,10 +156,10 @@ function atualizarVidas(){
         let img = document.getElementById("vida" + i);
 
         if(i <= vidas){
-            img.src = "img/estrelaCheia.png";
+            img.src = "../img/jogo/vida.png";
         }
         else{
-            img.src = "img/estrelaVazia.png";
+            img.src = "../img/jogo/morte.png";
         }
     }
 }
@@ -179,7 +179,7 @@ function revelarTabuleiro(){
         for(let j=0;j<10;j++){
             let celulaF = document.createElement("td");
             let imgCorrespondente = matriz[i][j];
-            celula.innerHTML =`<img src="img/${imgCorrespondente}.jpeg" width="50" height="50">`;
+            celula.innerHTML =`<img src="../img/jogo/${imgCorrespondente}.jpeg" width="50" height="50">`;
         }
     }
 }
