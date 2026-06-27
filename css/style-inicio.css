@@ -1,16 +1,15 @@
-/*tirando as margens padrões do navegador e colocando a fonte Poppins para a página inteira*/
+/*tirando as margens padrões do navegador e colocando a fonte para a página inteira*/
 *{
     margin:0;
     padding:0;
     /*faz o tamanho dos elementos contar borda e preenchimento*/
     box-sizing:border-box;
-    font-family:'Poppins', sans-serif;
+    font-family:'Montserrat', serif;
 }
 
 
 body{
     height:100vh;
-    /*impede de aparecer a barra de rolagem*/
     overflow:hidden;
 }
 
@@ -22,6 +21,17 @@ body{
     height:100%;
     object-fit:cover;
     z-index:-1;
+}
+
+.audio{
+    position: absolute;
+    color:aliceblue;
+    background-color: rgb(33, 141, 249);
+    width:50px;
+    height:20px;
+    border:none;
+    border-radius: 10px;
+
 }
 
 
@@ -39,6 +49,22 @@ body{
     width:1000px;
 }
 
+.luffy{
+    width: 70px;
+    height: auto;
+    position: absolute;
+    top:525px;
+    left: 450px;
+}
+.zoro{
+    width: 70px;
+    height: auto;
+    position: absolute;
+    top:540px;
+    left: 1040px;
+}
+
+
 
 /*ajustando o espaço entre os botões*/
 .botoes{
@@ -49,22 +75,18 @@ body{
 }
 
 /*arrumando o tamanho dos botões e estilizando eles*/
-button{
+.b{
 
-    width:250px;
+    width:300px;
     height:60px;
-
-    border:none;
+    border: 3px solid rgb(23, 75, 219);
     border-radius:40px;
-
-    background:rgba(255,255,255,0.45);
-
-    font-family:'Poppins', sans-serif;
+    background:rgba(255, 255, 255, 0.532);
+    font-family:'Montserrat', serif;
+    letter-spacing: 1px;
     font-size:24px;
     font-weight:700;
-
     cursor:pointer;
-
     transition:0.3s;
 }
 
