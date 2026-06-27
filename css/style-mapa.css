@@ -31,13 +31,3 @@
 
         }
 
-        /* Estilização geral dos botões */
-
-        button
-        {
-            font-family: 'Cinzel', serif;
-            font-weight: 700;
-            color:#4A5A2A;
-            background-color:#D69F3F;
-            border-radius: 10px;
-        }
