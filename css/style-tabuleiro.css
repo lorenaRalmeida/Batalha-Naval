@@ -15,7 +15,7 @@ body{
         rgba(2, 10, 25, 0.358),
         rgba(0,20,40,0.75)
     ),
-    url("../img/jogo/img_fundo.jpeg");
+    url("../img/jogo/img_fundo.jpg");
 
     background-size:cover;
     background-position:center;
