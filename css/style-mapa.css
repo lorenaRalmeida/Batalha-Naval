@@ -32,7 +32,7 @@
             transition:0.3s;
 
         }
-        
+
         .nivel1:hover{
             background:rgba(255, 255, 255, 0);
             transform:scale(1.05);
@@ -52,6 +52,11 @@
         .nivel3{
             cursor:pointer;
             transition:0.3s;
+        }
+
+        .nivel3:hover{
+            background:rgba(255, 255, 255, 0);
+            transform:scale(1.05);
         }
 
 
