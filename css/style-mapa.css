@@ -28,6 +28,30 @@
             top: 60%;
             left: 75%;
             padding:5px;
+            cursor:pointer;
+            transition:0.3s;
 
         }
+        
+        .nivel1:hover{
+            background:rgba(255, 255, 255, 0);
+            transform:scale(1.05);
+
+        }
+
+        .nivel2{
+            cursor:pointer;
+            transition:0.3s;
+        }
+
+        .nivel2:hover{
+            background:rgba(255, 255, 255, 0);
+            transform:scale(1.05);
+        }
+
+        .nivel3{
+            cursor:pointer;
+            transition:0.3s;
+        }
+
 
