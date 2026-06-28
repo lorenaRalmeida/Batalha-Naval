@@ -1,6 +1,71 @@
+const parametros = new URLSearchParams(window.location.search);
+let nivel = parametros.get("nivel");
+
+/* Uso da classe URLSearchParams e do evento window.location.search para identificar
+o parâmetro usado no script do mapa */
+
+let qtd_barco1;
+let qtd_barco2;
+let qtd_barco3;
+
+let qtd_bombas;
+let qtd_ondas;
+let vidas;
+let vidas_iniciais;
+let pontos_perdidos;
+let min_bombas;
+
+/* Declaração de variáveis, para que sejam usadas no código todo */
+
+if (nivel === "facil") 
+{
+    
+    qtd_barco1 = 10;
+    qtd_barco2 = 10;
+    qtd_barco3 = 10;
+
+    qtd_bombas = 10;
+    qtd_ondas = 45;
+    vidas = 7;
+    vidas_iniciais = 7;
+    pontos_perdidos = 5;
+    min_bombas = 5;
+
+}
+
+/* Uso de if e else para identificar o níivel de dificuldade através do parâmetro na URL */
+
+else if (nivel === "medio")
+{
+
+    qtd_barco1 = 10;
+    qtd_barco2 = 10;
+    qtd_barco3 = 10;
+
+    qtd_bombas = 25;
+    qtd_ondas = 45;
+    vidas = 5;
+    vidas_iniciais = 5;
+    pontos_perdidos = 10;
+    min_bombas = 3;
+
+}
+
+else
+{
+    qtd_barco1 = 5;
+    qtd_barco2 = 5;
+    qtd_barco3 = 5;
+
+    qtd_bombas = 40;
+    qtd_ondas = 45;
+    vidas = 3;
+    vidas_iniciais = 3;
+    pontos_perdidos = 15;
+    min_bombas = 1;
+}
 
 let pontos = 0;
-let vidas = 5;
 let barcosEncontrados = 0;
 let bombasEncontradas = 0;
 let jogoEncerrado = false;
@@ -11,23 +76,23 @@ function jogarBN(){
 let itens = [];
 // criamos um vetor vazio
 // adicionamos todos os elementos que ficarão na matriz
-for(let i=0;i<10;i++){
+for(let i=0;i<qtd_barco1;i++){
     itens.push("barco1");
 }
 
-for(let i=0;i<10;i++){
+for(let i=0;i<qtd_barco2;i++){
     itens.push("barco2");
 }
 
-for(let i=0;i<10;i++){
+for(let i=0;i<qtd_barco3;i++){
     itens.push("barco3");
 }
 
-for(let i=0;i<25;i++){
+for(let i=0;i<qtd_bombas;i++){
     itens.push("bomba");
 }
 
-for(let i=0;i<45;i++){
+for(let i=0;i<qtd_ondas;i++){
     itens.push("onda");
 }
 // embaralhamento dos itens do vetor
@@ -99,9 +164,9 @@ for(let i = 0; i < 10; i++){
             }
 
             else if(imgCorrespondente === "bomba"){
-                pontos = Math.max(0, pontos - 10);
+                pontos = Math.max(0, pontos - pontos_perdidos);
                 bombasEncontradas++;
-                if(bombasEncontradas >= 3){
+                if(bombasEncontradas >= min_bombas){
                     vidas--;
                     bombasEncontradas = 0;
                     atualizarVidas();
@@ -109,8 +174,8 @@ for(let i = 0; i < 10; i++){
             }
             document.getElementById("pontos").innerHTML = pontos;
             document.getElementById("barcos").innerHTML = barcosEncontrados;
-            document.getElementById("restantes").innerHTML = 30 - barcosEncontrados;
-            if(barcosEncontrados >= 30){
+            document.getElementById("restantes").innerHTML = (qtd_barco1 + qtd_barco2 + qtd_barco3) - barcosEncontrados;
+            if(barcosEncontrados >= qtd_barco1 + qtd_barco2 + qtd_barco3){
                 revelarTabuleiro();
             jogoEncerrado = true;
             mostrarFimJogo("Você venceu!");
@@ -134,7 +199,7 @@ function criarTabelaVidas(){
 
     let linhaV = document.createElement("tr");
 
-    for(let i = 1; i <= 5; i++){
+    for(let i = 1; i <= vidas_iniciais; i++){
 
         let celulaV = document.createElement("td");
 
@@ -155,7 +220,7 @@ function criarTabelaVidas(){
 
 function atualizarVidas(){
 
-    for(let i = 1; i <= 5; i++){
+    for(let i = 1; i <= vidas_iniciais; i++){
 
         let img = document.getElementById("vida" + i);
 
@@ -199,7 +264,7 @@ function revelarTabuleiro(){
 
 function novoJogo(){
     pontos = 0;
-    vidas = 5;
+    vidas = vidas_iniciais;
     barcosEncontrados = 0;
     jogoEncerrado = false;
     bombasEncontradas = 0;
@@ -211,7 +276,7 @@ function novoJogo(){
     document.getElementById("pontos").innerHTML = 0;
     document.getElementById("barcos").innerHTML = 0;
     document.getElementById("jogadas").innerHTML = 0;
-    document.getElementById("restantes").innerHTML = 30;
+    document.getElementById("restantes").innerHTML = qtd_barco1 + qtd_barco2 + qtd_barco3;
     jogarBN();
 }
 window.onload = function(){
