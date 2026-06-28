@@ -126,7 +126,7 @@ for(let i = 0; i < 10; i++){
 
         let celula = document.createElement("td");
 
-        celula.innerHTML = `<img src = "../img/jogo/mar.jpg">`;
+        celula.innerHTML = `<img src = "../img/jogo/teste.jpeg">`;
         let imgCorrespondente = matriz[i][j];
         celula.id = "c" + i + "_" + j;
         celula.addEventListener("click", function() {
