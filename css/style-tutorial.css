@@ -16,6 +16,31 @@ body{
     padding:20px;
 }
 
+/* botão música topo */
+.botao-musica{
+    position:fixed;
+    top:20px;
+    left:20px;
+    z-index:999;
+}
+
+.botao-musica button{
+    background:#ff9800;
+    color:white;
+    border:none;
+    padding:12px 20px;
+    border-radius:12px;
+    cursor:pointer;
+    font-size:1rem;
+    box-shadow:0 5px 15px rgba(0,0,0,.4);
+    transition:.3s;
+}
+
+.botao-musica button:hover{
+    transform:scale(1.05);
+    background:#e65100;
+}
+
 /* cartão principal */
 .card{
     width:1000px;
@@ -27,21 +52,36 @@ body{
     display:flex;
 }
 
-/* vídeo de fundo */
+/*fundo */
 .fundo{
     position:fixed;
     top:0;
     left:0;
     width:100%;
     height:100%;
+    z-index:-2;
+}
+
+.fundo img{
+    width:100%;
+    height:100%;
     object-fit:cover;
+}
+
+.overlay{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.4);
     z-index:-1;
 }
 
 /* área esquerda */
 .lado-esquerdo{
     width:35%;
-    background:linear-gradient(180deg,#4CAF50,#1B5E20);
+    background:linear-gradient(180deg,#ff9800,#d84315);
     display:flex;
     flex-direction:column;
     align-items:center;
@@ -77,6 +117,7 @@ body{
 .subtitulo{
     opacity:.9;
     margin-top:5px;
+    text-align:center;
 }
 
 /* área direita */
@@ -90,7 +131,7 @@ body{
 
 /* título */
 .titulo{
-    color:#2E7D32;
+    color:#d84315;
     margin-bottom:20px;
     font-size:2.2rem;
 }
@@ -100,7 +141,7 @@ body{
     background:#f7f7f7;
     padding:25px;
     border-radius:20px;
-    min-height:220px;
+    min-height:280px;
     position:relative;
     font-size:1.2rem;
     line-height:1.8;
@@ -124,7 +165,6 @@ body{
 }
 
 /* animação do cursor */
-/*@keyframes permite criar animações personalizadas especificando como os estilos de um elemento devem mudar em diferentes momentos*/
 @keyframes piscar{
     50%{
         border-color:transparent;
@@ -140,7 +180,7 @@ body{
 
 /* botões */
 button{
-    background:#2E7D32;
+    background:#d84315;
     color:white;
     border:none;
     padding:12px 24px;
@@ -152,6 +192,6 @@ button{
 
 /* hover dos botões */
 button:hover{
-    background:#1B5E20;
+    background:#bf360c;
     transform:scale(1.05);
 }

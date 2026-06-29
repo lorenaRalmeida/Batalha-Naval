@@ -1,16 +1,32 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
+
+<!-- configurações da página -->
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Batalha Naval</title>
- <link rel="stylesheet" href="../css/style-tutorial.css">
+
+<!-- título da aba -->
+<title>Luffy - Batalha Naval</title>
+
+<!-- link do css-->
+<link rel="stylesheet" href="../css/style-tutorial.css">
 </head>
+
 <body>
-    <!-- vídeo de fundo -->
-<video class="fundo" autoplay muted loop>
-    <source src="../vídeos/vid tutorial/fundot.mp4" type="video/mp4">
-</video>
+
+<!-- botão tocar música -->
+<div class="botao-musica">
+    <button onclick="tocarMusica()">
+        Tocar Música
+    </button>
+</div>
+
+<div class="fundo">
+    <img src="../img/tutorial/marine.jpg" alt="">
+</div>
+
+<div class="overlay"></div>
 
 <!-- card principal -->
 <div class="card">
@@ -20,14 +36,16 @@
 
         <!-- foto -->
         <div class="foto">
-            <img src="../vídeos/vid tutorial/peterf.gif">
+            <img src="../img/tutorial/luffy.jpg">
         </div>
 
         <!-- nome -->
-        <h2>Peter Pan</h2>
+        <h2>Monkey D. Luffy</h2>
 
         <!-- subtítulo -->
-        <p class="subtitulo">Seu guia da Terra do Nunca</p>
+        <p class="subtitulo">
+            O futuro Rei dos Piratas!
+        </p>
 
     </div>
 
@@ -46,16 +64,14 @@
         <div class="controles">
 
             <!-- botão para ler novamente -->
-            <button onclick="reiniciar()">
+            <button onclick="lerNovamente()">
                 Ler Novamente
             </button>
 
             <!-- botão voltar -->
-            <a href = "inicio.html">
-            <button>
+            <button onclick="voltarPagina()">
                 Voltar
             </button>
-            </a>
 
         </div>
 
@@ -65,9 +81,11 @@
 
 <!-- Áudio -->
 <audio id="audio" loop>
-    <source src="../áudios/tutorial/audio1.mp3" type="audio/mpeg">
+    <source src="../áudios/tutorial/audio.mp3" type="audio/mpeg">
 </audio>
- <script src="../script/script-tutorial.js"></script> 
+
+<!--link do script-->
+<script src="../script/script-tutorial.js"></script> 
 
 </body>
 </html>

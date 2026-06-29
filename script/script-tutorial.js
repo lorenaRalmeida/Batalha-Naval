@@ -1,45 +1,85 @@
-const texto =
-"Olá, aventureiro! Eu sou Peter Pan! "
-+ "Bem-vindo à Terra do Nunca e ao jogo Batalha Naval. "
-+ "Neste jogo, você terá um tabuleiro aonde tem barco, bombas e água. "
-+ "Em cada rodada você escolhe uma coordenada. "
-+ "Pode encontrar um barco, uma bomba ou apenas água. "
-+ "O objetivo é localizar e afundar todos os navios. "
-+ "Use estratégia, atenção e muita coragem. "
-+ "Boa sorte marinheiro(a)!";
+/* áudio */
+const audio = document.getElementById("audio");
 
-const velocidade = 40;
+/* texto estilo Luffy */
+const texto =
+"Yo! Eu sou Monkey D. Luffy, o futuro Rei dos Piratas! "
++ "Escuta aqui, marinheiro! Vou te explicar como funciona a Batalha Naval! "
++ "O jogo acontece em uma matriz 10 por 10, cheia de posições escondidas no oceano! "
++ "Existem 30 barcos espalhados pelo mapa, então você vai precisar de coragem e estratégia pra encontrar todos eles! "
++ "Em cada rodada você escolhe uma coordenada para atacar. "
++ "Se acertar um barco... BOOM! Você causa dano no inimigo! "
++ "Mas cuidado! Às vezes você só encontra água. "
++ "E tem mais! O jogo possui 3 dificuldades diferentes: fácil, médio e difícil! "
++ "Quanto maior a dificuldade, mais complicado fica! "
++ "Seu objetivo é afundar todos os barcos antes que suas tentativas acabem! "
++ "Então prepare-se pra aventura e mostre que você tem espírito de pirata!";
+
+/* velocidade da digitação */
+const velocidade = 35;
+
+/* campo do texto */
 const campoFala = document.getElementById("fala");
 
+/* índice */
 let indice = 0;
 
+/* controle do timeout */
+let timeoutAtual;
+
+/* escreve letra por letra */
 function escreverTexto(){
+
     if(indice < texto.length){
+
         campoFala.innerHTML += texto.charAt(indice);
+
         indice++;
-        setTimeout(escreverTexto, velocidade);
+
+        timeoutAtual = setTimeout(escreverTexto, velocidade);
     }
 }
 
+/* inicia a fala */
 function iniciar(){
+
+    clearTimeout(timeoutAtual);
+
     campoFala.innerHTML = "";
+
     indice = 0;
 
     escreverTexto();
-
 }
 
-function reiniciar(){
-    speechSynthesis.cancel();
+/* botão Ler Novamente */
+function lerNovamente(){
+
     iniciar();
+
 }
 
-window.onload = () => {
+/* botão voltar */
+function voltarPagina(){
 
-    if(speechSynthesis.getVoices().length === 0){
-        speechSynthesis.onvoiceschanged = iniciar;
+    window.history.back();
+
+}
+
+/* tocar música */
+function tocarMusica(){
+
+    if(audio.paused){
+
+        audio.play();
+
     }else{
-        iniciar();
+
+        audio.pause();
+
     }
 
-};
+}
+
+/* inicia automaticamente */
+iniciar();
