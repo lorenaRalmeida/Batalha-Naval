@@ -6,14 +6,14 @@
 
 body{
 
-    min-height:100vh;
+     min-height:100vh;
 
     font-family:"Orbitron",sans-serif;
 
     background:
     linear-gradient(
-        rgba(2, 10, 25, 0.358),
-        rgba(0,20,40,0.75)
+        rgba(2,10,25,.35),
+        rgba(0,20,40,.75)
     ),
     url("../img/jogo/img_fundo.jpg");
 
@@ -24,9 +24,9 @@ body{
 
     display:flex;
     flex-direction:column;
-    align-items:center;
+    align-items:flex-start;
 
-    color:rgb(45, 63, 137);
+    color:rgb(45,63,137);
 
     padding:30px;
 
@@ -34,10 +34,11 @@ body{
 }
 
 h1{
+     align-self:center;
 
-    font-size:4rem;
+    font-size:3rem;
 
-    margin-bottom:25px;
+    margin-bottom:30px;
 
     color:#ffe066;
 
@@ -70,8 +71,6 @@ h2{
     min-width:250px;
 
     padding:12px 18px;
-
-    border-radius:15px;
 
     background:rgba(255,255,255,0.08);
 
@@ -130,16 +129,23 @@ span{
 
 #tabuleiro{
 
+    margin-left:8vw;
+
     border-collapse:collapse;
 
-    border:2px solid #000000;
+    border:2px solid #000;
 
     box-shadow:
     0 0 40px rgba(19, 44, 136, 0.564),
     0 15px 40px rgba(0,0,0,0.5);
 
     background:
-    rgba(255,255,255,0.05);
+    rgb(6, 44, 110);
+
+    background-image: url("../img/jogo/1.png");
+    background-size: cover;      /* Faz a imagem preencher o tabuleiro */
+    background-position: center; /* Centraliza a imagem */
+    background-repeat: no-repeat;
 }
 
 #tabuleiro td{
@@ -411,49 +417,41 @@ body::before{
 }
 
 .painel{
+    position:fixed;
 
-    position: fixed;
+    right:50px;
+    top:50%;
 
-    left: 25px;
-    top: 140px;
+    transform:translateY(-50%);
 
-    width: 300px;
+    width:350px;
 
-    display: flex;
-    flex-direction: column;
+    display:flex;
+    flex-direction:column;
 
-    gap: 12px;
+    gap:12px;
 
-    padding: 20px;
+    padding:100px 10px;
 
-    border-radius: 20px;
+    background:rgba(0,0,0,.45);
 
-    background: rgba(0,0,0,0.45);
+    backdrop-filter:blur(12px);
 
-    backdrop-filter: blur(12px);
+    border:1px solid rgba(255,255,255,.15);
 
-    border: 1px solid rgba(255,255,255,0.15);
-
-    box-shadow:
-    0 0 25px rgba(0,0,0,0.4);
+    box-shadow:0 0 25px rgba(0,0,0,.4);
 }
+
 
 h2{
 
     width: 100%;
 
-    padding: 14px;
-
-    border-radius: 15px;
+    padding: 20px;
 
     background: rgba(255,255,255,0.08);
 
-    backdrop-filter: blur(10px);
-
     border: 1px solid rgba(255,255,255,0.15);
-
-    box-shadow:
-    0 0 15px rgba(255,255,255,0.08);
 
     font-size: 1rem;
 

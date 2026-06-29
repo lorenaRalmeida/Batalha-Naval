@@ -93,7 +93,7 @@ for(let i=0;i<qtd_bombas;i++){
 }
 
 for(let i=0;i<qtd_ondas;i++){
-    itens.push("onda");
+    itens.push("x");
 }
 // embaralhamento dos itens do vetor
 for(let i = itens.length - 1; i > 0; i--){
@@ -126,7 +126,7 @@ for(let i = 0; i < 10; i++){
 
         let celula = document.createElement("td");
 
-        celula.innerHTML = `<img src = "../img/jogo/teste.jpeg">`;
+        celula.innerHTML = `<img src = "../img/jogo/5.png">`;
         let imgCorrespondente = matriz[i][j];
         celula.id = "c" + i + "_" + j;
         celula.addEventListener("click", function() {
@@ -159,7 +159,7 @@ for(let i = 0; i < 10; i++){
                 barcosEncontrados++;
             }
 
-            else if(imgCorrespondente === "onda"){
+            else if(imgCorrespondente === "x"){
                 pontos += 0;
             }
 
@@ -243,7 +243,7 @@ function mostrarFimJogo(msg){
     document.getElementById("textoFinal").innerHTML = msg;
     setTimeout(function() {
         document.getElementById("overlay").style.display = "flex";
-    }, 2000);
+    }, 7000);
 }
 
 function revelarTabuleiro(){
