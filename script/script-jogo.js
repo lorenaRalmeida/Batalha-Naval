@@ -240,11 +240,10 @@ function atualizarVidas(){
 
 function mostrarFimJogo(msg){
 
-    document.getElementById("textoFinal")
-    .innerHTML = msg;
-
-    document.getElementById("overlay")
-    .style.display = "block";
+    document.getElementById("textoFinal").innerHTML = msg;
+    setTimeout(function() {
+        document.getElementById("overlay").style.display = "flex";
+    }, 2000);
 }
 
 function revelarTabuleiro(){
