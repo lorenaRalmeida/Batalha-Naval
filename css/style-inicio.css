@@ -2,14 +2,13 @@
 *{
     margin:0;
     padding:0;
-    /*faz o tamanho dos elementos contar borda e preenchimento*/
     box-sizing:border-box;
     font-family:'Montserrat', serif;
 }
 
 
 body{
-    height:100vh;
+    min-height:100vh;
     overflow:hidden;
 }
 
@@ -23,77 +22,152 @@ body{
     z-index:-1;
 }
 
+/*estilizando e posicionando o botão do áudio*/
 .audio{
-    position: absolute;
+    position:absolute;
+    top:20px;
+    left:20px;
     color:aliceblue;
-    background-color: rgb(33, 141, 249);
+    background-color:rgb(33,141,249);
     width:50px;
-    height:20px;
+    height:25px;
     border:none;
-    border-radius: 10px;
-
+    border-radius:10px;
 }
 
 
 /*ajustando os elementos da página*/
 .elementos{
-    height:100vh;
+    min-height:100vh;
     display:flex;
     flex-direction:column;
     align-items:center;
+    justify-content:center;
+    padding:20px;
 }
 
 
-/* ajustando o tamanho do título */
+/*deixando o título responsivo*/
 .titulo{
-    width:1000px;
+    width:min(80vw,1000px);
 }
 
+
+/*definindo o tamanho e posicionando os bonecos*/
 .luffy{
-    width: 70px;
-    height: auto;
-    position: absolute;
-    top:525px;
-    left: 450px;
+    top: 77vh;
+    left:30vw;
+    width:min(8vw,70px);
+    height:auto;
+    position:absolute;
+    bottom:40px;
 }
+
+
 .zoro{
-    width: 70px;
-    height: auto;
-    position: absolute;
-    top:540px;
-    left: 1040px;
+    right:28vw;
+    width:min(8vw,70px);
+    height:auto;
+    position:absolute;
+    bottom:40px;
 }
 
 
 
-/*ajustando o espaço entre os botões*/
+/*botões*/
 .botoes{
-
     display:flex;
-    gap:80px;
+    gap:clamp(20px,5vw,80px);
     margin-top:30px;
+    flex-wrap:wrap;
+    justify-content:center;
 }
 
-/*arrumando o tamanho dos botões e estilizando eles*/
-.b{
 
-    width:300px;
+/*definindo o tamanho e estilizando os botões*/
+.b{
+    width:min(80vw,300px);
     height:60px;
-    border: 3px solid rgb(23, 75, 219);
+    border:3px solid rgb(23,75,219);
     border-radius:40px;
-    background:rgba(255, 255, 255, 0.532);
-    font-family:'Montserrat', serif;
-    letter-spacing: 1px;
-    font-size:24px;
+    background:rgba(255,255,255,0.532);
+    letter-spacing:1px;
+    font-size:clamp(18px,3vw,24px);
     font-weight:700;
     cursor:pointer;
     transition:0.3s;
 }
 
-/*colocando um efeito quando passa o mouse*/
-button:hover{
 
+/*efeito quando passar o mouse em cima dos botões*/
+button:hover{
     background:rgba(255,255,255,0.75);
     transform:scale(1.05);
+}
+
+
+
+/*responsivo para celular*/
+@media(max-width:600px){
+
+    body{
+        overflow:auto;
+    }
+
+
+    .titulo{
+        width:90vw;
+        margin-bottom:30px;
+    }
+
+
+    .botoes{
+        flex-direction:column;
+        gap:20px;
+    }
+
+
+    .b{
+        width:85vw;
+        height:55px;
+    }
+
+
+    .luffy{
+        top: 400px;
+        width:60px;
+        left:50px;
+        bottom:10px;
+    }
+
+
+    .zoro{
+        top: 490px;
+        width:60px;
+        right:40px;
+        bottom:10px;
+    }
+
+}
+
+
+/*responsivo para tablet*/
+@media(min-width:601px) and (max-width:1000px){
+
+    .luffy{
+        top: 71vh;
+        left:20vw;
+    }
+
+
+    .zoro{
+        top: 73vh;
+        right:20vw;
+    }
+
+
+    .titulo{
+        width:85vw;
+    }
 
 }
