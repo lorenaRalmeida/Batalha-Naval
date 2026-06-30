@@ -198,12 +198,20 @@ for(let i = 0; i < 10; i++){
             if(barcosEncontrados >= qtd_barco1 + qtd_barco2 + qtd_barco3){
                 revelarTabuleiro();
             jogoEncerrado = true;
-            somVitoria.play();
+            somVitoria.play().then(() => {
+                console.log("Tocou!");
+            }).catch((erro) => {
+                console.log("Erro:", erro);
+            });
             mostrarFimJogo("Você venceu!");
             }else if(vidas <= 0){
                 revelarTabuleiro();
                 jogoEncerrado = true;
-                somDerrota.play();
+                somDerrota.play().then(() => {
+                    console.log("Tocou!");
+                }).catch((erro) => {
+                    console.log("Erro:", erro);
+                });
                 mostrarFimJogo("Game Over!");
             }
         });

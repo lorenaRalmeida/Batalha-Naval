@@ -103,6 +103,7 @@ span{
     border-radius:5px;
 
     border:2px solid rgb(0, 0, 0);
+    
 }
 
 #vidasTabela{
@@ -249,7 +250,7 @@ button:active{
     border: 3px solid #ffffff;
 
     box-shadow:
-    0 0 25px rgba(20, 80, 129, 0.5)
+    0 0 25px rgba(20, 80, 129, 0.5);
 
     animation: aparecer 0.5s ease;
 }
@@ -421,7 +422,7 @@ body::before{
 
 .painel{
 
-    width:320px;
+    width:380px;
 
     display:flex;
 
