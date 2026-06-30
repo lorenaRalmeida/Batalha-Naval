@@ -35,7 +35,7 @@ if (nivel === "facil")
     qtd_barco3 = 10;
 
     qtd_bombas = 15;
-    qtd_ondas = 40;
+    qtd_ondas = 55;
     vidas = 7;
     vidas_iniciais = 7;
     pontos_perdidos = 5;
