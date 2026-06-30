@@ -283,5 +283,50 @@
     
         }
 
+        /*Estilo para telas de celular (largura até 480px portrait)*/
+
+        @media (min-width: 480px) and (max-width: 767px){
+            
+            .nivel1
+        {
+            position: absolute;
+            width: 8%;
+            height: auto;
+            top: 21%;
+            left: 5%;
+
+        }
+
+        .nivel1-text
+        {
+            position: absolute;
+            top: 22%;
+            left: 28%;
+            color:#4b2e0d;
+            font-weight:bold;
+            font-size: 50px;
+        }
+        }
+
+        .nivel2
+        {
+            position: absolute;
+            width: 8%;
+            height: auto;
+            top: 5%;
+            left: 85%;
+
+        }
+
+        .nivel2-text
+        {
+            position: absolute;
+            top: 6%;
+            left: 60%;
+            color:#4b2e0d;
+            font-weight:bold;
+            font-size: 50px;
+        }
+
 
 
