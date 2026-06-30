@@ -16,6 +16,12 @@ let pontos_perdidos;
 let min_bombas;
 
 /* Declaração de variáveis, para que sejam usadas no código todo */
+const somBarco = new Audio("../audios/jogo/somBarco.mp3");
+const somAgua = new Audio("../audios/jogo/somAgua.mp3");
+const somBomba = new Audio("../audios/jogo/somBomba.mp3");
+somBarco.volume = 0.5;
+somAgua.volume = 0.4;
+somBomba.volume =0.3; 
 
 if (nivel === "facil") 
 {
@@ -24,12 +30,12 @@ if (nivel === "facil")
     qtd_barco2 = 10;
     qtd_barco3 = 10;
 
-    qtd_bombas = 10;
-    qtd_ondas = 45;
+    qtd_bombas = 15;
+    qtd_ondas = 40;
     vidas = 7;
     vidas_iniciais = 7;
     pontos_perdidos = 5;
-    min_bombas = 5;
+    min_bombas = 2;
 
 }
 
@@ -62,7 +68,7 @@ else
     vidas = 3;
     vidas_iniciais = 3;
     pontos_perdidos = 15;
-    min_bombas = 1;
+    min_bombas = 3;
 }
 
 let pontos = 0;
@@ -144,26 +150,36 @@ for(let i = 0; i < 10; i++){
             celula.innerHTML =`<img src="../img/jogo/${imgCorrespondente}.png">`;
 
             if(imgCorrespondente === "barco1"){
+                somBarco.currentTime = 0;
+                somBarco.play();
                 pontos += 10;
                 barcosEncontrados++;
                 
             }
 
             else if(imgCorrespondente === "barco2"){
+                somBarco.currentTime = 0;
+                somBarco.play();
                 pontos += 20;
                 barcosEncontrados++;
             }
 
             else if(imgCorrespondente === "barco3"){
+                somBarco.currentTime = 0;
+                somBarco.play();
                 pontos += 30;
                 barcosEncontrados++;
             }
 
             else if(imgCorrespondente === "x"){
                 pontos += 0;
+                somAgua.currentTime = 0;
+                somAgua.play();
             }
 
             else if(imgCorrespondente === "bomba"){
+                somBomba.currentTime = 0;
+                somBomba.play();
                 pontos = Math.max(0, pontos - pontos_perdidos);
                 bombasEncontradas++;
                 if(bombasEncontradas >= min_bombas){
@@ -243,7 +259,7 @@ function mostrarFimJogo(msg){
     document.getElementById("textoFinal").innerHTML = msg;
     setTimeout(function() {
         document.getElementById("overlay").style.display = "flex";
-    }, 7000);
+    }, 2000);
 }
 
 function revelarTabuleiro(){
