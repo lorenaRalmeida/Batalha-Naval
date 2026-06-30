@@ -249,8 +249,7 @@ button:active{
     border: 3px solid #ffffff;
 
     box-shadow:
-    0 0 25px rgba(20, 80, 129, 0.5),
-    0 0 50px rgba(31, 122, 138, 0.862);
+    0 0 25px rgba(20, 80, 129, 0.5)
 
     animation: aparecer 0.5s ease;
 }
@@ -281,7 +280,7 @@ button:active{
 
     padding: 14px 35px;
 
-    border: none;
+    border: 1px solid #ffffff;
 
     border-radius: 30px;
 
@@ -292,8 +291,8 @@ button:active{
     background:
     linear-gradient(
         135deg,
-        #2e7cb7,
-        #2265a4
+        #cb261d,
+        #a8251e
     );
 
     color: #020508;
@@ -359,19 +358,8 @@ body::before{
         transparent 2%
     );
 
-    animation: brilho 8s infinite linear;
 }
 
-@keyframes brilho{
-
-    from{
-        transform:translateY(0);
-    }
-
-    to{
-        transform:translateY(-40px);
-    }
-}
 
 @media(max-width:1100px){
       body{

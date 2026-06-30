@@ -19,9 +19,13 @@ let min_bombas;
 const somBarco = new Audio("../audios/jogo/somBarco.mp3");
 const somAgua = new Audio("../audios/jogo/somAgua.mp3");
 const somBomba = new Audio("../audios/jogo/somBomba.mp3");
+const somVitoria = new Audio("../audios/jogo/vitoria.mp3");
+const somDerrota = new Audio("../audios/jogo/derrota.mp3");
 somBarco.volume = 0.5;
 somAgua.volume = 0.4;
 somBomba.volume =0.3; 
+somVitoria.volume = 0.5;
+somDerrota.volume = 0.5;
 
 if (nivel === "facil") 
 {
@@ -194,10 +198,12 @@ for(let i = 0; i < 10; i++){
             if(barcosEncontrados >= qtd_barco1 + qtd_barco2 + qtd_barco3){
                 revelarTabuleiro();
             jogoEncerrado = true;
+            somVitoria.play();
             mostrarFimJogo("Você venceu!");
             }else if(vidas <= 0){
                 revelarTabuleiro();
                 jogoEncerrado = true;
+                somDerrota.play();
                 mostrarFimJogo("Game Over!");
             }
         });
