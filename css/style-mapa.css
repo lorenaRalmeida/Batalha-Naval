@@ -12,6 +12,8 @@
             height:100%;
             width:100%;
             overflow:hidden;
+            font-weight:700;
+            font-family: "Great Vibes", cursive;
         }
 
         .mapa
@@ -84,6 +86,16 @@
 
         }
 
+        .nivel1-text
+        {
+            position: absolute;
+            top: 60%;
+            left: 14%;
+            color:#4b2e0d;
+            font-weight:bold;
+            font-size: 50px;
+        }
+
         .nivel2
         {
             position: absolute;
@@ -94,6 +106,16 @@
 
         }
 
+        .nivel2-text
+        {
+            position: absolute;
+            top: 7%;
+            left: 5%;
+            color:#4b2e0d;
+            font-weight:bold;
+            font-size: 50px;
+        }
+
         .nivel3
         {
             position: absolute;
@@ -102,6 +124,16 @@
             top: 27%;
             left: 90%;
 
+        }
+
+        .nivel3-text
+        {
+            position: absolute;
+            top: 30%;
+            left: 79%;
+            color:#4b2e0d;
+            font-weight:bold;
+            font-size: 50px;
         }
     
         }
@@ -118,6 +150,17 @@
 
         }
 
+        .nivel1-text
+        {
+            position: absolute;
+            top: 15%;
+            left: 4%;
+            color:#4b2e0d;
+            font-weight:bold;
+            font-size: 50px;
+        }
+
+
         .nivel2
         {
             position: absolute;
@@ -128,6 +171,16 @@
 
         }
 
+        .nivel2-text
+        {
+            position: absolute;
+            top: 6%;
+            left: 65%;
+            color:#4b2e0d;
+            font-weight:bold;
+            font-size: 50px;
+        }
+
         .nivel3
         {
             position: absolute;
@@ -136,6 +189,16 @@
             top: 69%;
             left: 79%;
 
+        }
+
+        .nivel3-text
+        {
+            position: absolute;
+            top: 66%;
+            left: 65%;
+            color:#4b2e0d;
+            font-weight:bold;
+            font-size: 50px;
         }
     
         }
@@ -154,6 +217,16 @@
 
         }
 
+        .nivel1-text
+        {
+            position: absolute;
+            top: 8%;
+            left: 12%;
+            color:#4b2e0d;
+            font-weight:bold;
+            font-size: 50px;
+        }
+
         .nivel2
         {
             position: absolute;
@@ -164,6 +237,16 @@
 
         }
 
+        .nivel2-text
+        {
+            position: absolute;
+            top: 6%;
+            left: 65%;
+            color:#4b2e0d;
+            font-weight:bold;
+            font-size: 50px;
+        }
+
         .nivel3
         {
             position: absolute;
@@ -172,6 +255,16 @@
             top: 65%;
             left: 80%;
 
+        }
+
+        .nivel3-text
+        {
+            position: absolute;
+            top: 53%;
+            left: 76%;
+            color:#4b2e0d;
+            font-weight:bold;
+            font-size: 50px;
         }
     
         }
