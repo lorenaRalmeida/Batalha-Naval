@@ -7,10 +7,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mapa</title>
 
-    <!--Link da font Cinzel-->
-    <link rel="preconnect" href="https://fonts.googleapis.com"> 
+    <!--Link da font Great Vibes-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=Great+Vibes&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="../css/style-mapa.css">
 
@@ -29,13 +29,24 @@
     <img src="../img/mapa/mapa_ampliado.jpg"> 
 
     <img class="nivel1" src="../img/mapa/x.png">
+    <p class="nivel1-text">Fácil</p>
 
     <img class="nivel2" src="../img/mapa/x.png">
+    <p class="nivel2-text">Médio</p>
 
     <img class="nivel3" src="../img/mapa/x.png">
-    
+    <p class="nivel3-text">Difícil</p>
 
     <script src="../script/script-mapa.js"></script>
+
+    <!-- áudio da página -->
+   <audio id="musica">
+        <source src="../áudios/mapa/som_mapa.mp3" type="audio/mpeg">
+    </audio>
+
+   <button onclick = tocar() class="audio">
+        ♫
+    </button>
 
     </div>
 
