@@ -7,6 +7,20 @@
             
         }
 
+        /*estilizando e posicionando o botão do áudio*/
+
+        .audio{
+            position:absolute;
+            top:20px;
+            left:20px;
+            color:aliceblue;
+            background-color:#b93613;
+            width:50px;
+            height:25px;
+            border:none;
+            border-radius:10px;
+        }
+
         body
         {
             height:100%;
